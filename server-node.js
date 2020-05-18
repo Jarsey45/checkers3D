@@ -231,6 +231,15 @@ const server = http.createServer(function (req, res) {
 
 
 
+      } else if (req.url == "/RESET") {
+        postRequest(req).then((body) => {
+          users = [];
+          console.log(users)
+
+        }).catch((e) => {
+          console.log(e);
+          res.end();
+        })
       }
 
       break;

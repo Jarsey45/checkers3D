@@ -13,7 +13,16 @@ class Ui {
 
   reset() {
     $("#btReset").on('click', function () {
-      $("#nick").val("")
+      $("#nick").val("");
+      $.ajax({
+        url: '/RESET',
+        type: 'post', // performing a POST request
+        data: JSON.stringify({}),
+        dataType: 'json',
+        success: function (data) {
+          console.log('reset')
+        }
+      });
     });
   }
 
