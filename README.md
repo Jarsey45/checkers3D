@@ -4,7 +4,7 @@
 
   Użyć komendy
   ```
-  node sever-node.js
+  node server-node.js
   ```
 
 ## Express
@@ -12,4 +12,8 @@
   Użyć komendy
   ```
   npm install express body-parser
+  ```
+  Następnie
+  ```
+    node server-express.js
   ```
