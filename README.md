@@ -1,7 +1,7 @@
 # Checkers 3D
-
+#### ***Nie działa z jakiegoś powodu na Mozilla Firefox***
 ## Jak uzywać 
-
+  
   Użyć komendy
   ```
   node server-node.js
@@ -17,3 +17,6 @@
   ```
     node server-express.js
   ```
+#### Autor
+
+Copyright (c) 2020 Bartłomiej Kowalczyk
