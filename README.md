@@ -1,8 +1,7 @@
 # Checkers 3D
-
+#### ***Nie działa z jakiegoś powodu na Mozilla Firefox***
 ## Jak uzywać 
-  #### ***Nie działa z jakiegoś powodu na Mozilla Firefox***
-
+  
   Użyć komendy
   ```
   node server-node.js
