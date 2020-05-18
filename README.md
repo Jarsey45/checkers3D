@@ -17,3 +17,6 @@
   ```
     node server-express.js
   ```
+#### Autor
+
+Copyright (c) 2020 Bartłomiej Kowalczyk
