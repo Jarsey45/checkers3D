@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- JQUERY I THREEE BULLSHIT -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"
+    integrity="sha256-gSh8eotzb/CVvCREGPUNgIWuDnTYnZvVOQnRrP1eDjI=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/three@0.110.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script src="postprocessing/CopyShader.js"></script>
+  <script src="postprocessing/FXAAShader.js"></script>
+  <script src="postprocessing/EffectComposer.js"></script>
+  <script src="postprocessing/RenderPass.js"></script>
+  <script src="postprocessing/ShaderPass.js"></script>
+  <script src="postprocessing/OutlinePass.js"></script>
+  <!-- MOJ WLASNY BULLSHIT -->
+  <script src="Net.js"></script>
+  <script src="Game.js"></script>
+  <script src="Ui.js"></script>
+  <script src="pionek.js"></script>
+  <script src="plansza.js"></script>
+  <script src="light.js"></script>
+  <script src="Main.js"></script>
+  <title>Checkers</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <div id="nav">
+    <p id="status" style="color: green;">STATUS</p>
+    <p id="tura"></p>
+  </div>
+  <div id='login'>
+    <div id="okno">
+      <p>LOGOWANIE</p>
+      <input id="nick" type='text'>
+      </br>
+      <div id='btLog' class="bt">LOGUJ</div>
+      <div id='btReset' class="bt">RESET</div>
+    </div>
+  </div>
+
+</body>
+
+</html>
