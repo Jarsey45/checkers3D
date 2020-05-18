@@ -1,7 +1,7 @@
 # Checkers 3D
 
 ## Jak uzywać 
-  #### Nie działa z jakiegoś powodu na Mozilla Firefox
+  #### ***Nie działa z jakiegoś powodu na Mozilla Firefox***
 
   Użyć komendy
   ```
