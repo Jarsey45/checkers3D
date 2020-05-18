@@ -1,13 +1,13 @@
-#Checkers 3D
+# Checkers 3D
 
-##Jak uzywać 
+## Jak uzywać 
 
   Użyć komendy
   ```
   node sever-node.js
   ```
 
-##Express
+## Express
 
   Użyć komendy
   ```
