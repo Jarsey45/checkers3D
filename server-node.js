@@ -22,11 +22,9 @@ let plansza = [ // puste - 0, biale - 1, czarne - 2
 
 
 const server = http.createServer(function (req, res) {
-  //console.log(req.url)
   // parametr res oznacza obiekt odpowiedzi serwera (res)
   // parametr req oznacza obiekt żądania klienta (req)
 
-  //console.log(req.url)
   switch (req.method) {
     case "GET":
       if (req.url == '/') {
@@ -77,14 +75,14 @@ const server = http.createServer(function (req, res) {
                   username: body.user,
                   side: users[0].side == 0 ? 1 : 0, // 0 - czarne; 1 - biale
                   score: 0,
-                  //map: plansza
+
                 };
               } else {
                 var obj = {
                   username: body.user,
                   side: users.length,
                   score: 0,
-                  //map: plansza
+
                 };
               }
 
@@ -140,7 +138,7 @@ const server = http.createServer(function (req, res) {
           })
 
 
-      } else if (req.url == "/UPDATE_STATE") { // O HUJ CHODZI JAPIERDOLE XD
+      } else if (req.url == "/UPDATE_STATE") { 
 
         postRequest(req).then((body) => {
             //console.log(users.length)
@@ -152,11 +150,7 @@ const server = http.createServer(function (req, res) {
                     user.score = body.playerScore;
                     instruction = body.instruction;
 
-
-
-                    // console.log(body.spacing)
-                    // console.log(plansza)
-                    // console.log(turn)
+                    
                     let json = {
                       kolejka: turn,
                       spacing: plansza,
@@ -167,9 +161,6 @@ const server = http.createServer(function (req, res) {
                     };
 
 
-                    // if (body.next == 1) {
-                    //   turn = turn == 1 ? 0 : 1;
-                    // }
                     //console.log(body.username + '- jest, jego tura')
                     res.end(JSON.stringify(json));
                   } else { // nie jego tura
@@ -188,7 +179,6 @@ const server = http.createServer(function (req, res) {
                     }
 
                     //reset instruckji
-                    // console.log(instruction)
                     instruction = undefined;
 
 
@@ -273,8 +263,6 @@ function postRequest(req) {
       try {
 
         body = JSON.parse(body);
-        //console.log(body)
-        //console.log(body)
       } catch (e) {
         reject(e);
       }
