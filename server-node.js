@@ -67,17 +67,25 @@ const server = http.createServer(function (req, res) {
             if (users.length <= 1) {
 
 
-              if (users[0]) {
-                if (body.user == users[0]) {
+              if (users[0]) { // jest juz jeden user
+                if (users[0].username == body.user) { //istneije taki user już
+                  var huj = {
+                    text: 'Istnieje już taki gracz, zmien nick',
+                    error: 3
+                  };
+                  res.end(JSON.stringify(huj));
+                  return;
+                } else { // nie ma takiego usera
+
+                  var obj = {
+                    username: body.user,
+                    side: users[0].side == 0 ? 1 : 0, // 0 - czarne; 1 - biale
+                    score: 0,
+
+                  };
 
                 }
-                var obj = {
-                  username: body.user,
-                  side: users[0].side == 0 ? 1 : 0, // 0 - czarne; 1 - biale
-                  score: 0,
-
-                };
-              } else {
+              } else { // nie ma pierwszego usera
                 var obj = {
                   username: body.user,
                   side: users.length,
@@ -138,7 +146,7 @@ const server = http.createServer(function (req, res) {
           })
 
 
-      } else if (req.url == "/UPDATE_STATE") { 
+      } else if (req.url == "/UPDATE_STATE") {
 
         postRequest(req).then((body) => {
             //console.log(users.length)
@@ -150,7 +158,7 @@ const server = http.createServer(function (req, res) {
                     user.score = body.playerScore;
                     instruction = body.instruction;
 
-                    
+
                     let json = {
                       kolejka: turn,
                       spacing: plansza,

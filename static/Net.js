@@ -30,26 +30,30 @@ class Net {
       }),
       dataType: 'json',
       success: function (data) {
-        net.username = name;
-        console.table(data);
-        ui.changeNav(data.text);
-        if (data.side == 1) {
-          net.kolor = 1; //'white';
+        if (data.error) {
+          ui.changeNav(data.text);
         } else {
-          net.kolor = 0; //'dark';
+          net.username = name;
+          console.table(data);
+          ui.changeNav(data.text);
+          if (data.side == 1) {
+            net.kolor = 1; //'white';
+          } else {
+            net.kolor = 0; //'dark';
+          }
+
+
+          game.setup(); // show plansza i pionki
+          game.camera.position.set(0, 500, data.side ? -500 : 500);
+          net.turn = data.side == 1 ? 1 : 0;
+
+
+
+          setInterval(function () {
+            net.update();
+
+          }, 500)
         }
-
-
-        game.setup(); // show plansza i pionki
-        game.camera.position.set(0, 500, data.side ? -500 : 500);
-        net.turn = data.side == 1 ? 1 : 0;
-
-
-
-        setInterval(function () {
-          net.update();
-
-        }, 500)
       }
     });
 
