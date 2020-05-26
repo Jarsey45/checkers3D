@@ -20,4 +20,4 @@
 #### Autor
 
 Copyright (c) 2020 Bartłomiej Kowalczyk
-*** except img directory ***
+#### ***except img directory***
